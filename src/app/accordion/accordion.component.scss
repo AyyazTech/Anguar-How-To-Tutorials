@@ -1,0 +1,55 @@
+#container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  #accordion {
+    width: 400px;
+  }
+  .item {
+    .heading {
+      background-color: #3949ab;
+      padding: 20px 20px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .content {
+      background-color: #e8eaf6;
+      padding: 0px 20px;
+      border: 1px solid transparent;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+      line-height: 40px;
+      border-top: 0px;
+    }
+
+    &.active {
+      .content {
+        padding: 20px;
+        max-height: 400px;
+        overflow-y: auto;
+        border-color: #a3aeee;
+      }
+    }
+  }
+
+  .custom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input,
+    textarea {
+      padding: 10px;
+      width: 400px;
+    }
+    textarea {
+      height: 200px;
+    }
+    button {
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+}
