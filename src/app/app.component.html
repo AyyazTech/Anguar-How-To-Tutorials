@@ -1,0 +1,27 @@
+<form [formGroup]="form" action="javascript:void(0)" (submit)="submit()">
+  <div>
+    <label> Email </label>
+    <input
+      formControlName="email"
+      type="email"
+      placeholder="Enter your email"
+    />
+  </div>
+
+  <div>
+    <label> Password </label>
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Enter your password"
+    />
+  </div>
+
+  <button [disabled]="processing" type="submit">
+    {{ processing ? "Please wait..." : "Submit" }}
+  </button>
+
+  <div *ngIf="showSuccessMessage" class="successMessage">
+    Your data has been submitted succesfully!!
+  </div>
+</form>
