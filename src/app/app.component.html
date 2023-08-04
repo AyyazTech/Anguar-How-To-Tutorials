@@ -1,0 +1,28 @@
+<div id="container">
+  <h1>Pagination Practice</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of paginatedData; let index = index">
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item.handle }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-pagination
+    [totalItems]="data.length"
+    [itemsPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    (onClick)="changePage($event)"
+  ></app-pagination>
+</div>
