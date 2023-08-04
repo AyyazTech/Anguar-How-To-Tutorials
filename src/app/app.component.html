@@ -1,0 +1,13 @@
+<a routerLink="product/2"> Product 2 Detail </a> |
+
+<a routerLink="product/3"> Product 3 Detail </a> |
+
+<a routerLink="product/4"> Product 4 Detail </a>
+
+<div>
+  <a routerLink="product/4" [queryParams]="{ category: 'One' }">Category 1</a> |
+  <a routerLink="product/4" [queryParams]="{ category: 'Two' }">Category 2</a> |
+  <a routerLink="product/4" [queryParams]="{ category: 'Three' }">Category 3</a>
+</div>
+
+<router-outlet></router-outlet>
