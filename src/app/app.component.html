@@ -1,0 +1,11 @@
+<div [formGroup]="form" id="form" *ngIf="!authService.session">
+  <input formControlName="username" type="text" placeholder="Username" />
+  <input formControlName="password" type="password" placeholder="Password" />
+  <button (click)="submit()">Login</button>
+</div>
+
+<div *ngIf="authService.session">
+  <h1>Welcome {{ authService.session.firstName }}</h1>
+
+  <button (click)="authService.logout()">Logout</button>
+</div>

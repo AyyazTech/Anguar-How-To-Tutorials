@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +9,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  imageUrl = 'assets/images/example.jpg';
-  imageWidth = 400;
-  isResponsive = false;
+  form: FormGroup = this.fb.group({
+    username: [''],
+    password: [''],
+  });
+  constructor(private fb: FormBuilder, public authService: AuthService) {}
+
+  submit() {
+    this.authService
+      .login(this.form.value.username, this.form.value.password)
+      .subscribe((r) => {
+        alert('Congratulations!! You have been logged in successfully');
+      });
+  }
 }
